@@ -24,7 +24,11 @@
         </div>
       </section>
 
-     
+      <div class="columns">
+        <div class="column is-one-third">Column 1</div>
+        <div class="column is-one-third">Column 2</div>
+        <div class="column is-one-third">Column 3</div>
+      </div>
 
 
       
@@ -32,14 +36,20 @@
 
         
 
-        <div class="row main-row">
+        <div class="row main">
             <div class="search-column col-3 d-flex flex-column search-column justify-content-start">
                 <form class="form-inline my-2 row">
                     <input id="search" class="form-control col-9" type="search" placeholder="Search by city">
                     <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit"></button>
                 </form>
-                <ul id="past-searches" class="list-group p-2"></ul>
-                <button type="button" class="btn btn-outline-primary">Clear Searches</button>
+                <div class="select is-primary">
+                    <select>
+                      <option>Select dropdown</option>
+                      <option>With options</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-primary">Clear Searches</button>
+                  </div>
+               
             </div>
             <div class="main-weather p-2 col">
                 <div class="container-fluid">
@@ -58,6 +68,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
-  <script type="text/javascript" src="./assets/js/script.js"></script>
+  <script type="text/javascript" src="./assets/script.js"></script>
 </body>
 </html>
