@@ -25,38 +25,32 @@
       </section>
 
       <div class="columns">
-        <div class="column is-one-third">Column 1</div>
-        <div class="column is-one-third">Column 2</div>
-        <div class="column is-one-third">Column 3</div>
-      </div>
-  
-     <div class="row main">
-        <h1>Food Nutrition Lookup</h1>
-        <form id="foodForm">
-            <label for="foodInput">Enter Food Name</label>
-            <input type="text" id="foodInput" required>
-            <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit">Search</button>
-        </form>
-        <div id="result"></div>
-            <div id="result"></div>
-              <div class="select is-primary">
-                  <select id="savedSearches">
-                    <option>Select dropdown</option>
-                    <option>With options</option>
-                  </select>
-                  <button type="button" class="btn btn-outline-primary">Clear Searches</button>
-                </div>
-               
-          </div>
-        <div class="main-weather p-2 col">
-            <div class="container-fluid">
-                <div id="report" class="results"></div>
-                <div class="report pt-3"></div>
+        <div class="column is-one-third">
+          <div class="row main">
+            <h1>Food Nutrition Lookup</h1>
+            <form id="foodForm">
+                <label for="foodInput">Enter Food Name</label>
+                <input type="text" id="foodInput" required>
+                <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit">Search</button>
+            </form>
+            <img id="resultImage" alt="Pexels Image">
             </div>
         </div>
-
-
-
+        <div class="column is-one-third">
+          <h1 id="foodName"></h1>
+          <div id="result"></div>
+        </div>
+        <div class="column is-one-third">
+          <h1>Saved Searches</h1>
+          <div class="select is-primary">
+            <select id="savedSearches">
+              <option>Select dropdown</option>
+              <option>With options</option>
+            </select>
+            <button type="button" class="btn btn-outline-primary">Clear Searches</button>
+          </div>
+        </div>
+      </div>
 
 
   <!-- Added link to the jQuery library -->
