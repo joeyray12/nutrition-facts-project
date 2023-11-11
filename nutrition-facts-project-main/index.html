@@ -29,36 +29,31 @@
         <div class="column is-one-third">Column 2</div>
         <div class="column is-one-third">Column 3</div>
       </div>
-
-
-      
-    <main class="container-fluid">
-
-        
-
-        <div class="row main">
-            <div class="search-column col-3 d-flex flex-column search-column justify-content-start">
-                <form class="form-inline my-2 row">
-                    <input id="search" class="form-control col-9" type="search" placeholder="Search by city">
-                    <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit"></button>
-                </form>
-                <div class="select is-primary">
-                    <select>
-                      <option>Select dropdown</option>
-                      <option>With options</option>
-                    </select>
-                    <button type="button" class="btn btn-outline-primary">Clear Searches</button>
-                  </div>
-               
-            </div>
-            <div class="main-weather p-2 col">
-                <div class="container-fluid">
-                    <div class="report"></div>
-                    <div class="report pt-3"></div>
+  
+     <div class="row main">
+        <h1>Food Nutrition Lookup</h1>
+        <form id="foodForm">
+            <label for="foodInput">Enter Food Name</label>
+            <input type="text" id="foodInput" required>
+            <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit">Search</button>
+        </form>
+        <div id="result"></div>
+            <div id="result"></div>
+              <div class="select is-primary">
+                  <select id="savedSearches">
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </select>
+                  <button type="button" class="btn btn-outline-primary">Clear Searches</button>
                 </div>
+               
+          </div>
+        <div class="main-weather p-2 col">
+            <div class="container-fluid">
+                <div id="report" class="results"></div>
+                <div class="report pt-3"></div>
             </div>
         </div>
-    </main>
 
 
 
