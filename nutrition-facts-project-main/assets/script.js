@@ -12,6 +12,12 @@ $(function () {
             saveFood();
         })
     
+    // Listen for clear searched button click and clear local storage
+        $(".clear-btn").on("click", function() {
+            localStorage.clear();
+            savedFood.length = 0
+        })
+
     // Get nutitional information
       async function nutrition() {
             let foodInput = document.getElementById("foodInput").value;
@@ -100,5 +106,6 @@ $(function () {
                 );
         });
     }
+
 
     })
