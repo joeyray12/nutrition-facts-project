@@ -12,40 +12,50 @@
 </head>
 
 <body>
-  <section class="hero is-primary">
-    <div class="hero-body">
-      <p class="title">
-        Nutrition Calculator
-      </p>
-      <p class="subtitle">
-        Description
-      </p>
-    </div>
-  </section>
+    
+    <section class="hero is-primary">
+        <div class="hero-body">
+          <p class="title">
+            Nutrition Calculator
+          </p>
+          <p class="subtitle">
+            Description
+          </p>
+        </div>
+      </section>
 
-  <div class="columns">
-    <div class="column is-one-third">Column 1</div>
-    <div class="column is-one-third">Column 2</div>
-    <div class="column is-one-third">Column 3</div>
-  </div>
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="row main">
+            <h1>Food Nutrition Lookup</h1>
+            <form id="foodForm">
+                <label for="foodInput">Enter Food Name</label>
+                <input type="text" id="foodInput" required>
+                <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit">Search</button>
+            </form>
+            <img id="resultImage" alt="Pexels Image">
+            </div>
+        </div>
+        <div class="column is-one-third">
+          <h1 id="foodName"></h1>
+          <div id="result"></div>
+        </div>
+        <div class="column is-one-third">
+          <h1>Saved Searches</h1>
+          <div class="select is-primary">
+            <select id="savedSearches">
+              <option>Select dropdown</option>
+              <option>With options</option>
+            </select>
+            <button type="button" class="btn btn-outline-primary">Clear Searches</button>
+          </div>
+        </div>
+      </div>
 
-  <main class="container-fluid">
-    <form class="form-inline my-2 row">
-      <input class="input" type="search" placeholder="Search Food">
-      <input class="button is-small" type="submit" value="Submit input">
-    </form>
-    <div class="select is-primary">
-      <select>
-        <option>Select dropdown</option>
-        <option>With options</option>
-      </select>
-      <button type="button" class="btn btn-outline-primary">Clear Searches</button>
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
   <script type="text/javascript" src="./assets/script.js"></script>
 </body>
-
 </html>
