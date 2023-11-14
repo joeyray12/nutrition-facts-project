@@ -3,8 +3,15 @@ $(function () {
     // Variables
     const apiKeyInfo = "NBxZ6PYHEIlsNcenacb3VZ2jAgpg54ESLlX56CXz";
     const apiKeyPic = "JxZ45GdnM3IMUTXO0ZrTnKpo59O6usFAoZDPZl16f9kga6lc44K5szMp";
-    const savedFood = JSON.parse(localStorage.getItem("Food")) || [];
-    
+    let savedFood = JSON.parse(localStorage.getItem("Food")) || [];
+    const select = $("#savedSearches");
+
+    if (savedFood != null) {
+        for (let i = 0 ; i<savedFood.length; i++) {
+            select.append($("<option></option>").text(savedFood[i]))
+        }
+    }
+
     // Listen for search button click
         $("#search-btn").on("click", function () {
             event.preventDefault();
@@ -15,7 +22,6 @@ $(function () {
     // Listen for clear searched button click and clear local storage
         $(".clear-btn").on("click", function() {
             localStorage.clear();
-            savedFood.length = 0
         })
 
     // Get nutitional information
@@ -95,17 +101,9 @@ $(function () {
     
     // Take searched foods and add them to drop down list
     function saveFood() {
-        let userInput = $("#foodInput").val()
+        const userInput = $("#foodInput").val()
         savedFood.push(userInput)
         localStorage.setItem("Food", JSON.stringify(savedFood));
-        const select = $("#savedSearches")
-        console.log(select)
-        $.each(savedFood, function(val, text) {
-            select.append(
-                    $('<option></option>').val(val).html(text)
-                );
-        });
+        select.append($("<option></option>").text(userInput))
     }
-
-
-    })
+});
