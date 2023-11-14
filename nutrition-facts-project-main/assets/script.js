@@ -98,9 +98,8 @@ $(function () {
         savedFood.push(userInput)
         localStorage.setItem("Food", JSON.stringify(savedFood));
         const select = $("#savedSearches");
-        savedFood.forEach(function(){
-            select.append($("<option></option>"))
-        });
+        console.log(select)
+        select.append($("<option></option>").text(userInput))
     }
 
     })
