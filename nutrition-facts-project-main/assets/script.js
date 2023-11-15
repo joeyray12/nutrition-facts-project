@@ -117,8 +117,7 @@ $(function () {
     //Listen for button click and take you to the search results of that button
     $("#savedSearches").on("click", ".saved", function(event) {
         event.preventDefault();
-        console.log(this.innerHTML)
         $("#foodInput").val(this.textContent)
-        $("#search-btn").click()
+        $("#search-btn").click()   
     })
    });
