@@ -5,15 +5,18 @@ $(function () {
     const apiKeyPic = "JxZ45GdnM3IMUTXO0ZrTnKpo59O6usFAoZDPZl16f9kga6lc44K5szMp";
     let savedFood = JSON.parse(localStorage.getItem("Food")) || [];
     const select = $("#savedSearches");
+    const pastSearches = document.getElementsByClassName("saved");
+    
 
+    // Pull items from local storage and display them as buttons on page load
     if (savedFood != null) {
         for (let i = 0 ; i<savedFood.length; i++) {
-            select.append($("<option></option>").text(savedFood[i]))
+            select.append($("<button class = saved></button>").text(savedFood[i]))
         }
     }
 
     // Listen for search button click
-        $("#search-btn").on("click", function () {
+        $("#search-btn").on("click", function (event) {
             event.preventDefault();
             nutrition();
             saveFood();
@@ -22,13 +25,14 @@ $(function () {
     // Listen for clear searched button click and clear local storage
         $(".clear-btn").on("click", function() {
             localStorage.clear();
+            select.children().detach()
         })
 
     // Get nutitional information
       async function nutrition() {
-            let foodInput = document.getElementById("foodInput").value;
-    
-            try {
+        let foodInput = document.getElementById("foodInput").value;
+
+        try {
                 let response = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${foodInput}&api_key=${apiKeyInfo}`);
                 let data = await response.json();
     
@@ -48,6 +52,7 @@ $(function () {
                 console.error('Error fetching data:', error);
             }
         }
+
     // Display nutritional facts for each food item
         function displayResults(data) {
             let foodInput = document.getElementById("foodInput").value;
@@ -99,11 +104,21 @@ $(function () {
         imageElement.src = imageUrl;
     }
     
-    // Take searched foods and add them to drop down list
+
+
+    // Take searched foods and add them as a new button
     function saveFood() {
         const userInput = $("#foodInput").val()
         savedFood.push(userInput)
         localStorage.setItem("Food", JSON.stringify(savedFood));
-        select.append($("<option></option>").text(userInput))
+        select.append($("<button class = saved></button>").text(userInput))
     }
-});
+
+    //Listen for button click and take you to the search results of that button
+    $("#savedSearches").on("click", ".saved", function(event) {
+        event.preventDefault();
+        console.log(this.innerHTML)
+        $("#foodInput").val(this.textContent)
+        $("#search-btn").click()
+    })
+   });
