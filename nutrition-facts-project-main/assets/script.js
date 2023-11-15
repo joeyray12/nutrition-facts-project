@@ -91,7 +91,7 @@ $(function () {
             }
     
             const data = await response.json();
-            return data.photos[0].src.medium; // Adjust the size according to your needs
+            return data.photos[1].src.medium; // Adjust the size according to your needs
         } catch (error) {
             console.error('Error fetching image:', error);
         }
