@@ -31,7 +31,7 @@
             <form id="foodForm">
                 <label for="foodInput">Enter Food Name</label>
                 <input type="text" id="foodInput" required>
-                <button id="search-btn" class="btn btn-outline-primary col-3 my-2" type="submit">Search</button>
+                <button id="search-btn" class="button is-rounded btn-outline-primary" type="submit">Search</button>
             </form>
             <img id="resultImage" alt="Pexels Image">
             </div>
@@ -42,12 +42,8 @@
         </div>
         <div class="column is-one-third">
           <h1>Saved Searches</h1>
-          <div class="select is-primary">
-            <select id="savedSearches">
-              <option>Select dropdown</option>
-            </select>
-            <button type="button" class="btn btn-outline-primary clear-btn">Clear Searches</button>
-          </div>
+          <div id="savedSearches"></div>
+            <button class="button is-rounded clear-btn">Clear Searches</button>
         </div>
       </div>
 
