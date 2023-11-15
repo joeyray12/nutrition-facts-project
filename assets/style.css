@@ -1,0 +1,62 @@
+
+body {
+    text-align: center;
+    position:absolute; 
+    height:100vh; 
+    width:100vw;
+    background: hsl(171, 100%, 41%) !important;;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+.column {
+    border-radius: 25px;
+  background: hsl(171, 100%, 41%) !important;;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  outline: auto;
+  flex-wrap: wrap;
+  flex-grow: inherit;
+outline-color: white
+}
+
+
+button{
+  opacity:0.8;
+  }
+  button:hover{
+  opacity:1;
+  } 
+
+  
+
+  .hero {
+    background-image: url(cooking-background.jpg);
+    background-size: 500px
+    background-repeat: no-repeat;
+  }
+
+  .title {
+    font-style: italic;
+    font-weight: 1000;
+    color:  hsl(171, 100%, 41%) !important;
+    text-shadow: black;
+
+    
+  }
+
+  .subtitle {
+    font-style: italic;
+    font-weight: 1000;
+    color:  hsl(171, 100%, 41%) !important
+  }
+
+  h1 {
+    font-weight: 500;
+    margin: auto;
+  }
+
